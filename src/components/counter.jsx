@@ -10,6 +10,7 @@ export class Counter extends Component {
 	}
 
 	render() {
+		const {onDelete, counter} = this.props
 		return (
 			<div>
 				<span className={this.getBadgeClassess()}>
@@ -18,6 +19,9 @@ export class Counter extends Component {
 				<button onClick={() => this.handleIncrement({id: 1})}
 					className="btn btn-secondary btn-sm">
 					Increment
+				</button>
+				<button onClick={()=>onDelete(counter.id)} className="btn btn-danger btn-sm m-2">
+					Delete
 				</button>
 			</div>
 		)

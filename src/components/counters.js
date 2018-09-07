@@ -10,12 +10,22 @@ export default class Counters extends Component {
 			{id: 4, value: 3},
 		]
 	}
+
+	handleDelete = (id) => {
+
+		const counters = this.state.counters.filter(c => c.id !== id )
+		this.setState({counters})
+	}
+
 	render() {
 		const {counters} = this.state
 		return (
 			<React.Fragment>
 				{ counters.map(counter =>
-					<Counter key={counter.id} value={counter.value}/>
+					<Counter key={counter.id}
+						value={counter.value}
+						counter={counter}
+						onDelete={this.handleDelete}/>
 				)}
 			</React.Fragment>
 		)
