@@ -14,7 +14,9 @@ export default class Counters extends Component {
 		const {counters} = this.state
 		return (
 			<React.Fragment>
-				{ counters.map(counter => <Counter key={counter.id}/>) }
+				{ counters.map(counter =>
+					<Counter key={counter.id} value={counter.value}/>
+				)}
 			</React.Fragment>
 		)
 	}
